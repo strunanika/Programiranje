@@ -55,9 +55,6 @@ while visina == 0:
         print("Prišlo je do napake. Potrebno je vpisati število.")
         visina = 0
 print(f"")
-
-#visina = input("Podaj višino leta: ")
-
 				
 sAl = int(tocka_laA[0])
 minAl = int(tocka_laA[1])
@@ -71,12 +68,6 @@ sekAf = float(tocka_fiA[2])
 sBf = int(tocka_fiB[0])
 minBf = int(tocka_fiB[1])
 sekBf = float(tocka_fiB[2])
-
-# izpis
-#print (f"{sAl} {minAl} {sekAl}")
-#print (f"{sBl} {minBl} {sekBl}")
-#print (f"{sAf} {minAf} {sekAf}")
-#print (f"{sBf} {minBf} {sekBf}")
 
 	# PRETVORBA IZ S MIN SEK V DECIMALNE SEKUNDE
 tAl = sAl + minAl/60 + sekAl/3600
@@ -95,20 +86,10 @@ radBf = math.radians(tBf)
 R = 6371 #kilometri
 p = 45 * math.pi/180
 
-	#	AZIMUT	# ?? -rezultat????????
+	#	AZIMUT	#
 
 azimut_rad = math.atan(1/((1/(abs(radBl-radAl))) * math.log((math.tan(p+(radAf/2)))/(math.tan(p+(radBf/2))))))
 #print (f"{azimut_rad:5.8f}")
-
-#X = abs(radBl-radAl)
-#F = math.tan( p + ( radAf / 2 ) )
-#E = math.tan( p + ( radBf / 2 ) )
-#B = math.log( F / E )
-#H = ( 1 / X ) * B
-
-#print (f"{H:.5f}") 
-#print (f"{azimut_rad:.5f}") 
-
 
 if azimut_rad > 0 and azimut_rad < math.pi/2:
 	azimut_rad = azimut_rad
@@ -116,8 +97,6 @@ elif azimut_rad > math.pi/2 and azimut_rad < 3*math.pi/2:
 	azimut_rad = azimut_rad + math.pi
 else:
 	azimut_rad = azimut_rad	+ 2*math.pi
-
-#print (f"{azimut_rad:.10f}")
 	
 	# DOLŽINA #
 
